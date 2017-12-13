@@ -1,13 +1,15 @@
 <h1>Welcome</h1>
-<% new_balance = @user.balance + deposit_amt - withdraw_amt%>
 
 <h2>Here is your account information.</h2>
 <p>Balance: <%=new_balance %>
 
 <h2>How much would you like to deposit?</h2>
-<p>Deposit: <input type="text" name="deposit_amt"></p>
+<p>Deposit: <input type="text" name="@deposit_amt"></p>
 
 <h2>How much would you like to withdraw?</h2>
-<p>Withdrawal: <input type="text" name="withdraw_amt"></p>
+<p>Withdrawal: <input type="text" name="@withdraw_amt"></p>
+<% if @withdraw_amt > @user_balance %>
+<p>Withdrawal amount is too large. Your balance is only <%=@balance%>
 
+<% @new_balance = @user.balance + @deposit_amt - @withdraw_amt%>
 <p><a href="/logout">Log Out</a></p>
