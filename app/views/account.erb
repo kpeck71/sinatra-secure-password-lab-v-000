@@ -1,9 +1,11 @@
 <h1>Welcome</h1>
+<% balance = @user.balance + deposit_amt%>
 
 <h2>Here is your account information.</h2>
 <p>Balance: <%=@user.balance %>
 
 <h2>How much would you like to deposit?</h2>
+<input type="text" name="deposit_amt"><
 <h2>How much would you like to withdraw?</h2>
 
 <p><a href="/logout">Log Out</a></p>
